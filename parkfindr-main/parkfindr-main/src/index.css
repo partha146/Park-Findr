@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #5b6cf0;
+  --color-primary-hover: #4f5ee5;
+  --color-primary-soft: #eef1ff;
+  --color-accent: #6366f1;
+  --color-available: #4caf50;
+  --color-occupied: #ef5350;
+  --color-surface: #fafafa;
+  --color-muted: #6b7280;
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: #f7f7f8;
+  color: #1f2937;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.input-field {
+  @apply w-full px-4 py-3 rounded-lg border border-gray-200 bg-white text-gray-900 text-[15px] placeholder:text-gray-400 outline-none transition-colors focus:border-indigo-300 focus:ring-2 focus:ring-indigo-100;
+}
+
+.btn-primary {
+  @apply w-full py-3 rounded-lg bg-indigo-500 text-white text-[15px] font-medium transition-colors hover:bg-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-soft {
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary-soft text-indigo-600 text-sm font-medium transition-colors hover:bg-indigo-100;
+}
+
+.page-header {
+  @apply px-4 pt-6 pb-4 bg-white border-b border-gray-100;
+}
+
+.page-title {
+  @apply text-xl font-semibold text-gray-900 tracking-tight;
+}
